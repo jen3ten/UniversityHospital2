@@ -8,7 +8,7 @@ namespace UniversityHospital2
     {
         public bool PhoneOrNot { get; set; }
 
-        public Receptionist(string employeeName, int employeeNumber, int employeeSalary, bool paidOrNot, string employeeType, bool phoneOrNot) : base(employeeName, employeeNumber, employeeSalary, paidOrNot, employeeType)
+        public Receptionist(string employeeName, int employeeNumber, bool phoneOrNot) : base(employeeName, employeeNumber, 45000, false, "Receptionist")
         {
             PhoneOrNot = phoneOrNot;
             ;
