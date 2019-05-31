@@ -46,5 +46,30 @@ namespace UniversityHospital2
                 }
             }
         }
+
+        public override void ViewEmployeeStatus()
+        {
+
+            foreach (Nurse nurse in NurseList)
+            {
+                Console.WriteLine($"Name: {nurse.EmployeeName} | Number: {nurse.EmployeeNumber} | Salary: {nurse.EmployeeSalary} | Paid: {nurse.PaidOrNot} | Position: {nurse.EmployeeType}");
+
+            }
+        }
+
+       /* public void SelectNurse()
+        {
+            int i = 0;    
+            foreach (Nurse nurse in NurseList)
+            {
+                i += 1;
+                Console.WriteLine(i + ": " + nurse.EmployeeName);
+            }
+            Console.WriteLine("Select a nurse by number.");
+            int nurseSelect = Convert.ToInt32(Console.ReadLine());
+            NurseList[nurseSelect - 1].INTERACT();
+            */
+
+        }
     }
 }

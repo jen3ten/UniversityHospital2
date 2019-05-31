@@ -4,7 +4,7 @@ using System.Text;
 
 namespace UniversityHospital2
 {
-    public class Doctor : Employee
+    internal class Doctor : Employee
     {
         List<Doctor> DoctorList = new List<Doctor>();
 
@@ -14,7 +14,7 @@ namespace UniversityHospital2
         {
             Specialty =specialty;            
         }
-
+         
         public void HireDoctor()
         {
             Doctor doctor = new Doctor("Fred", 23, "surgeon");
@@ -25,6 +25,31 @@ namespace UniversityHospital2
             Console.WriteLine("What is the doctor's specialty?");
             doctor.Specialty = Console.ReadLine();
             DoctorList.Add(doctor);
+        }
+        public override void PaySalary()
+        {
+            foreach (Doctor doctor in DoctorList)
+            {
+                if (doctor.PaidOrNot == false)
+                {
+                    Console.WriteLine($"You have paid {doctor.EmployeeName} $90,000");
+                    doctor.PaidOrNot = true;
+                }
+                else
+                {
+                    Console.WriteLine($"{doctor.EmployeeName} has already been paid.");
+                }
+            }
+        }
+
+        public override void ViewEmployeeStatus()
+        {
+
+            foreach (Doctor doctor in DoctorList)
+            {
+                Console.WriteLine($"Name: {doctor.EmployeeName} | Number: {doctor.EmployeeNumber} | Salary: {doctor.EmployeeSalary} | Paid: {doctor.PaidOrNot} | Position: {doctor.EmployeeType}");
+
+            }
         }
     }
 }

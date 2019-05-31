@@ -10,7 +10,7 @@ namespace UniversityHospital2
 
         public Receptionist(string employeeName, int employeeNumber, bool phoneOrNot) : base(employeeName, employeeNumber, 45000, false, "Receptionist")
         {
-            PhoneOrNot = phoneOrNot;           
+            PhoneOrNot = phoneOrNot;
         }
 
         List<Receptionist> ReceptionistList = new List<Receptionist>();
@@ -40,4 +40,31 @@ namespace UniversityHospital2
 
             ReceptionistList.Add(receptionist);
         }
-}
+        public override void PaySalary()
+        {
+            foreach (Receptionist receptionist in ReceptionistList)
+            {
+                if (receptionist.PaidOrNot == false)
+                {
+                    Console.WriteLine($"You have paid {receptionist.EmployeeName} $45,000");
+                    receptionist.PaidOrNot = true;
+                }
+                else
+                {
+                    Console.WriteLine($"{receptionist.EmployeeName} has already been paid.");
+                }
+            }
+        }
+        public override void ViewEmployeeStatus()
+        {
+
+        foreach (Receptionist receptionist in ReceptionistList)
+            {
+                Console.WriteLine($"Name: {receptionist.EmployeeName} | Number: {receptionist.EmployeeNumber} | Salary: {receptionist.EmployeeSalary} | Paid: {receptionist.PaidOrNot} | Position: {receptionist.EmployeeType}");
+                    
+            }
+        }
+            
+
+    }
+} 

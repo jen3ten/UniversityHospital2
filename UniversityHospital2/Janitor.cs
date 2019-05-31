@@ -40,5 +40,30 @@ namespace UniversityHospital2
                           
             JanitorList.Add(janitor);
         }
+        public override void PaySalary()
+        {
+            foreach (Janitor janitor in JanitorList)
+            {
+                if (janitor.PaidOrNot == false)
+                {
+                    Console.WriteLine($"You have paid {janitor.EmployeeName} $40,000");
+                    janitor.PaidOrNot = true;
+                }
+                else
+                {
+                    Console.WriteLine($"{janitor.EmployeeName} has already been paid.");
+                }
+            }
+        }
+
+        public override void ViewEmployeeStatus()
+        {
+
+            foreach (Janitor janitor in JanitorList)
+            {
+                Console.WriteLine($"Name: {janitor.EmployeeName} | Number: {janitor.EmployeeNumber} | Salary: {janitor.EmployeeSalary} | Paid: {janitor.PaidOrNot} | Position: {janitor.EmployeeType}");
+
+            }
+        }
     }
 }
