@@ -4,14 +4,13 @@ using System.Text;
 
 namespace UniversityHospital2
 {
-    public class Employee
+    public abstract class Employee
     {
         public string EmployeeName { get; set; }
         public int EmployeeNumber { get; set; }
         public int EmployeeSalary { get; set; }
         public bool PaidOrNot { get; set; }
         public string EmployeeType { get; set; }
-
 
         public Employee(string employeeName, int employeeNumber, int employeeSalary, bool paidOrNot, string employeeType)
         {
@@ -20,10 +19,9 @@ namespace UniversityHospital2
             EmployeeSalary = employeeSalary;
             PaidOrNot = paidOrNot;
             EmployeeType = employeeType;
-
         }
 
-
+        public abstract void PaySalary();
     }
 
 }

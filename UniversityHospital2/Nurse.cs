@@ -4,14 +4,13 @@ using System.Text;
 
 namespace UniversityHospital2
 {
-    public class Nurse : Employee
+    internal class Nurse : Employee
     {
         public int NumberOfPatients { get; set; }
 
         public Nurse(string employeeName, int employeeNumber , int numberOfPatients) : base(employeeName, employeeNumber, 50000, false, "Nurse")
         {
             NumberOfPatients = numberOfPatients;
-
         }
         List<Nurse> NurseList = new List<Nurse>();
 
@@ -30,6 +29,22 @@ namespace UniversityHospital2
 
             NurseList.Add(nurse);
 
+        }
+
+        public override void PaySalary()
+        {
+            foreach (Nurse nurse in NurseList)
+            {
+                if (nurse.PaidOrNot == false)
+                {
+                    Console.WriteLine($"You have paid {nurse.EmployeeName} $50,000");
+                    nurse.PaidOrNot = true;
+                }
+                else
+                {
+                    Console.WriteLine($"{nurse.EmployeeName} has already been paid.");
+                }
+            }
         }
     }
 }
