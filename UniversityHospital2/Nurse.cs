@@ -12,49 +12,25 @@ namespace UniversityHospital2
         {
             NumberOfPatients = numberOfPatients;
         }
-        List<Nurse> NurseList = new List<Nurse>();
-
-        public void HireNurse()
-        {
-            Nurse nurse = new Nurse("Fanny", 23, 47);
-
-            Console.WriteLine("What is the nurse's name?");
-            nurse.EmployeeName = Console.ReadLine();
-
-            Console.WriteLine("What is the nurse's employee number?");
-            nurse.EmployeeNumber = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("How many patients does the nurse have?");
-            nurse.NumberOfPatients = Convert.ToInt32(Console.ReadLine());
-
-            NurseList.Add(nurse);
-
-        }
-
+       
         public override void PaySalary()
         {
-            foreach (Nurse nurse in NurseList)
-            {
-                if (nurse.PaidOrNot == false)
+           
+                if (PaidOrNot == false)
                 {
-                    Console.WriteLine($"You have paid {nurse.EmployeeName} $50,000");
-                    nurse.PaidOrNot = true;
+                    Console.WriteLine($"You have paid {EmployeeName} $50,000");
+                    PaidOrNot = true;
                 }
                 else
                 {
-                    Console.WriteLine($"{nurse.EmployeeName} has already been paid.");
+                    Console.WriteLine($"{EmployeeName} has already been paid.");
                 }
-            }
         }
+        
 
         public override void ViewEmployeeStatus()
-        {
-
-            foreach (Nurse nurse in NurseList)
-            {
-                Console.WriteLine($"Name: {nurse.EmployeeName} | Number: {nurse.EmployeeNumber} | Salary: {nurse.EmployeeSalary} | Paid: {nurse.PaidOrNot} | Position: {nurse.EmployeeType}");
-
-            }
+        {     
+                Console.WriteLine($"Name: {EmployeeName} | Number: {EmployeeNumber} | Salary: {EmployeeSalary} | Paid: {PaidOrNot} | Position: {EmployeeType}");
         }
 
        /* public void SelectNurse()
@@ -70,6 +46,6 @@ namespace UniversityHospital2
             NurseList[nurseSelect - 1].INTERACT();
             */
 
-        }
+        
     }
 }

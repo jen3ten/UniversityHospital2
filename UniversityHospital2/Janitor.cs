@@ -13,57 +13,22 @@ namespace UniversityHospital2
             SweepingOrNot = sweepingOrNot;           
         }
 
-        List<Janitor> JanitorList = new List<Janitor>();
-
-        public void HireJanitor()
-        {
-            Janitor janitor = new Janitor("Fred", 23, false);
-
-            Console.WriteLine("What is the janitor's name?");
-            janitor.EmployeeName = Console.ReadLine();
-
-            Console.WriteLine("What is the janitor's employee number?");
-            janitor.EmployeeNumber = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Is the janitor sweeping? ");
-            Console.WriteLine("1: Yes\n 2: No");
-            string sweepingMenu = Console.ReadLine();
-
-            if (sweepingMenu == "1")
-            {
-                janitor.SweepingOrNot = true;
-            }
-            else
-            {
-                janitor.SweepingOrNot = false;
-            }
-                          
-            JanitorList.Add(janitor);
-        }
         public override void PaySalary()
         {
-            foreach (Janitor janitor in JanitorList)
-            {
-                if (janitor.PaidOrNot == false)
+                if (PaidOrNot == false)
                 {
-                    Console.WriteLine($"You have paid {janitor.EmployeeName} $40,000");
-                    janitor.PaidOrNot = true;
+                    Console.WriteLine($"You have paid {EmployeeName} $40,000");
+                    PaidOrNot = true;
                 }
                 else
                 {
-                    Console.WriteLine($"{janitor.EmployeeName} has already been paid.");
-                }
-            }
+                    Console.WriteLine($"{EmployeeName} has already been paid.");
+                }          
         }
 
         public override void ViewEmployeeStatus()
         {
-
-            foreach (Janitor janitor in JanitorList)
-            {
-                Console.WriteLine($"Name: {janitor.EmployeeName} | Number: {janitor.EmployeeNumber} | Salary: {janitor.EmployeeSalary} | Paid: {janitor.PaidOrNot} | Position: {janitor.EmployeeType}");
-
-            }
+                Console.WriteLine($"Name: {EmployeeName} | Number: {EmployeeNumber} | Salary: {EmployeeSalary} | Paid: {PaidOrNot} | Position: {EmployeeType}");            
         }
     }
 }
