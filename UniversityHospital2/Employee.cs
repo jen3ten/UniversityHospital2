@@ -23,6 +23,7 @@ namespace UniversityHospital2
 
         public abstract void PaySalary();
         public abstract void ViewEmployeeStatus();
+
     }
 
 }

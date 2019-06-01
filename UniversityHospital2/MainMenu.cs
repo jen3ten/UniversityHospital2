@@ -17,6 +17,7 @@ namespace UniversityHospital2
         {
             Patient hospitalPatients = new Patient("Patient");
             hospitalPatients.AddPatients();
+            
             EmployeeDatabase universityHospitals = new EmployeeDatabase();           
             bool running = true;
             Console.WriteLine("University Hospitals Database");

@@ -6,10 +6,10 @@ namespace UniversityHospital2
 {
     class EmployeeDatabase
     {
-        List<Receptionist> ReceptionistList = new List<Receptionist>();
-        List<Janitor> JanitorList = new List<Janitor>();
-        List<Nurse> NurseList = new List<Nurse>();
-        List<Doctor> DoctorList = new List<Doctor>();
+        public List<Receptionist> ReceptionistList = new List<Receptionist>();
+        public List<Janitor> JanitorList = new List<Janitor>();
+        public List<Nurse> NurseList = new List<Nurse>();
+        public List<Doctor> DoctorList = new List<Doctor>();
 
         public void HireReceptionist()
         {
@@ -45,6 +45,7 @@ namespace UniversityHospital2
             Doctor doctorMike = new Doctor("Mike", 12, "surgeon");
             DoctorList.Add(doctorMike);
 
+       
         }
 
         public void HireJanitor()
