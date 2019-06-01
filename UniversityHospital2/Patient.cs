@@ -46,5 +46,15 @@ namespace UniversityHospital2
             Patient patientKyle = new Patient("Kyle");
             PatientList.Add(patientKyle);
         }
+
+        public void ViewPatients()
+        {
+            foreach (Patient patient in PatientList)
+            {
+                Console.WriteLine($"{PatientName}:     BloodLevel: {BloodLevel} HealthLevel: { HealthLevel} ");
+            }
+        }
+
+        
     }
 }

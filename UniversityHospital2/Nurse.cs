@@ -14,8 +14,7 @@ namespace UniversityHospital2
         }
        
         public override void PaySalary()
-        {
-           
+        {           
                 if (PaidOrNot == false)
                 {
                     Console.WriteLine($"You have paid {EmployeeName} $50,000");
@@ -27,25 +26,9 @@ namespace UniversityHospital2
                 }
         }
         
-
         public override void ViewEmployeeStatus()
         {     
                 Console.WriteLine($"Name: {EmployeeName} | Number: {EmployeeNumber} | Salary: {EmployeeSalary} | Paid: {PaidOrNot} | Position: {EmployeeType}");
-        }
-
-       /* public void SelectNurse()
-        {
-            int i = 0;    
-            foreach (Nurse nurse in NurseList)
-            {
-                i += 1;
-                Console.WriteLine(i + ": " + nurse.EmployeeName);
-            }
-            Console.WriteLine("Select a nurse by number.");
-            int nurseSelect = Convert.ToInt32(Console.ReadLine());
-            NurseList[nurseSelect - 1].INTERACT();
-            */
-
-        
+        }        
     }
 }

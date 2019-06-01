@@ -100,5 +100,51 @@ namespace UniversityHospital2
                 doctor.ViewEmployeeStatus();
             }   
         }
+
+        public void PayDatabase()
+        {
+            foreach (Receptionist receptionist in ReceptionistList)
+            {
+                receptionist.PaySalary();
+            }
+            foreach (Janitor janitor in JanitorList)
+            {
+                janitor.PaySalary();
+            }
+            foreach (Nurse nurse in NurseList)
+            {
+                nurse.PaySalary();
+            }
+            foreach (Doctor doctor in DoctorList)
+            {
+                doctor.PaySalary();
+            }
+        }
+
+        public void GetNurseBloodDraw()
+        {
+            int i = 0;
+            foreach (Nurse nurse in NurseList)
+            {
+                i += 1;
+                Console.WriteLine(i + ": " + nurse.EmployeeName);
+            }
+            Console.WriteLine("Select a nurse by number.");
+            int nurseSelect = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"You have selected {NurseList[nurseSelect - 1].EmployeeName} to draw blood.");
+        }
+
+        public void GetNurseHealthCare()
+        {
+            int i = 0;
+            foreach (Nurse nurse in NurseList)
+            {
+                i += 1;
+                Console.WriteLine(i + ": " + nurse.EmployeeName);
+            }
+            Console.WriteLine("Select a nurse by number.");
+            int nurseSelect = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"You have selected {NurseList[nurseSelect - 1].EmployeeName} to care for patients.");
+        }
     }
 }
