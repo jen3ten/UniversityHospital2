@@ -33,6 +33,19 @@ namespace UniversityHospital2
 
             ReceptionistList.Add(receptionist);
         }
+        public void AddDoctor()
+        {
+
+            Doctor doctorBob = new Doctor("Bob", 23, "surgeon");
+            DoctorList.Add(doctorBob);
+            Doctor doctorSuzy = new Doctor("Suzy", 44, "podiatrist");
+            DoctorList.Add(doctorSuzy);
+            Doctor doctorLindsay = new Doctor("Lindsay", 32, "geriatrics");
+            DoctorList.Add(doctorLindsay);
+            Doctor doctorMike = new Doctor("Mike", 12, "surgeon");
+            DoctorList.Add(doctorMike);
+
+        }
 
         public void HireJanitor()
         {
@@ -131,7 +144,7 @@ namespace UniversityHospital2
             }
             Console.WriteLine("Select a nurse by number.");
             int nurseSelect = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($"You have selected {NurseList[nurseSelect].EmployeeName} to draw blood.");
+            Console.WriteLine($"You have selected {NurseList[nurseSelect -1].EmployeeName} to draw blood.");
         }
 
         public void GetNurseHealthCare()
@@ -145,6 +158,31 @@ namespace UniversityHospital2
             Console.WriteLine("Select a nurse by number.");
             int nurseSelect = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($"You have selected {NurseList[nurseSelect - 1].EmployeeName} to care for patients.");
+        }
+        public void GetDoctorBloodDraw()
+        {
+            int i = 0;
+            foreach (Doctor doctor in DoctorList)
+            {
+                i += 1;
+                Console.WriteLine(i + ": " + doctor.EmployeeName);
+            }
+            Console.WriteLine("Select a doctor by number.");
+            int doctorSelect = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"You have selected {DoctorList[doctorSelect -1].EmployeeName} to draw blood.");
+        }
+
+        public void GetDoctorHealthCare()
+        {
+            int i = 0;
+            foreach (Doctor doctor in DoctorList)
+            {
+                i += 1;
+                Console.WriteLine(i + ": " + doctor.EmployeeName);
+            }
+            Console.WriteLine("Select a doctor by number.");
+            int doctorSelect = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"You have selected {DoctorList[doctorSelect - 1].EmployeeName} to care for patients.");
         }
     }
 }

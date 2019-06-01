@@ -33,22 +33,24 @@ namespace UniversityHospital2
             BloodLevel -= 2;
         }
 
-        List<Patient> PatientList = new List<Patient>();
+        public List<Patient> PatientList = new List<Patient>();
+        
 
-        public void AddPatients()
-        {
-            Patient patientAlex = new Patient("Alex");
-            PatientList.Add(patientAlex);
-            Patient patientSally = new Patient("Sally");
-            PatientList.Add(patientSally);
-            Patient patientGreg = new Patient("Greg");
-            PatientList.Add(patientGreg);
-            Patient patientKyle = new Patient("Kyle");
-            PatientList.Add(patientKyle);
+    public void AddPatients()
+    {
 
-        }
+        Patient patient = new Patient("Alex");
+        PatientList.Add(patient);
+        Patient patientSally = new Patient("Sally");
+        PatientList.Add(patientSally);
+        Patient patientGreg = new Patient("Greg");
+        PatientList.Add(patientGreg);
+        Patient patientKyle = new Patient("Kyle");
+        PatientList.Add(patientKyle);
 
-        public void ViewPatients()
+    }
+
+    public void ViewPatients()
         {
             foreach (Patient patient in PatientList)
             {

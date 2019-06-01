@@ -12,7 +12,8 @@ namespace UniversityHospital2
         {
             Specialty =specialty;            
         }
-         
+
+        
         public override void PaySalary()
         {          
                 if (PaidOrNot == false)

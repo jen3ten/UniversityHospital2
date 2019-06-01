@@ -22,10 +22,10 @@ namespace UniversityHospital2
             Console.WriteLine("University Hospitals Database");
             do
             {
-                Console.WriteLine("Press any key to continue:");
+                Console.WriteLine("Press enter to continue:");
                 Console.ReadLine();
                 Console.Clear();
-                Console.WriteLine("1: View Employee Database\n2: Hire Employee\n3: Pay all unpaid Employees\n4: Patient Database\n5: Menu Choice\n6: Close program");
+                Console.WriteLine("1: View Employee Database\n2: Hire Employee\n3: Pay all unpaid Employees\n4: Patient Database\n5: Select medical care\n6: Close program");
                 string mainMenu = Console.ReadLine();
                 switch (mainMenu)
                 {
@@ -58,12 +58,33 @@ namespace UniversityHospital2
                         break;
 
                     case "4":
+                        
                         hospitalPatients.ViewPatients();
                         break;
 
                     case "5":
-                        universityHospitals.GetNurseBloodDraw();
-                        hospitalPatients.NurseDraw();
+                        Console.WriteLine("1: Blood draw from nurse\n2: Care from nurse\n3: Blood draw from doctor\n4: Care from doctor");
+                        string medicalCare = Console.ReadLine();
+                        switch (medicalCare)
+                        {
+                            case "1":
+                                universityHospitals.GetNurseBloodDraw();
+                                hospitalPatients.NurseDraw();
+                                break;
+                            case "2":
+                                universityHospitals.GetNurseHealthCare();
+                                hospitalPatients.NurseCare();
+                                break;
+                            case "3":
+                                universityHospitals.GetDoctorBloodDraw();
+                                hospitalPatients.DoctorDraw();
+                                break;
+                            case "4":
+                                universityHospitals.GetDoctorHealthCare();
+                                hospitalPatients.DoctorCare();
+                                break;
+
+                        }
                         break;
                     case "6":
                         running = false;
