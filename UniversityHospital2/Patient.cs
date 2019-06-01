@@ -45,6 +45,7 @@ namespace UniversityHospital2
             PatientList.Add(patientGreg);
             Patient patientKyle = new Patient("Kyle");
             PatientList.Add(patientKyle);
+
         }
 
         public void ViewPatients()

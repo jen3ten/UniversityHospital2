@@ -25,7 +25,7 @@ namespace UniversityHospital2
                 Console.WriteLine("Press any key to continue:");
                 Console.ReadLine();
                 Console.Clear();
-                Console.WriteLine("1: View Employee Database\n2: Hire Employee\n3: Pay all unpaid Employees\n4: Patient Database\n5: Menu Choice");
+                Console.WriteLine("1: View Employee Database\n2: Hire Employee\n3: Pay all unpaid Employees\n4: Patient Database\n5: Menu Choice\n6: Close program");
                 string mainMenu = Console.ReadLine();
                 switch (mainMenu)
                 {
@@ -64,6 +64,9 @@ namespace UniversityHospital2
                     case "5":
                         universityHospitals.GetNurseBloodDraw();
                         hospitalPatients.NurseDraw();
+                        break;
+                    case "6":
+                        running = false;
                         break;
                 }
             }

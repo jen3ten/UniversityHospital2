@@ -131,7 +131,7 @@ namespace UniversityHospital2
             }
             Console.WriteLine("Select a nurse by number.");
             int nurseSelect = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($"You have selected {NurseList[nurseSelect - 1].EmployeeName} to draw blood.");
+            Console.WriteLine($"You have selected {NurseList[nurseSelect].EmployeeName} to draw blood.");
         }
 
         public void GetNurseHealthCare()
