@@ -21,7 +21,6 @@ namespace UniversityHospital2
             Console.WriteLine("Is the receptionist talking on phone? ");
             Console.WriteLine("1: Yes\n 2: No");
             string phoneMenu = Console.ReadLine();
-
             if (phoneMenu == "1")
             {
                 receptionist.PhoneOrNot = true;
@@ -30,12 +29,11 @@ namespace UniversityHospital2
             {
                 receptionist.PhoneOrNot = false;
             }
-
             ReceptionistList.Add(receptionist);
         }
+
         public void AddDoctor()
         {
-
             Doctor doctorBob = new Doctor("Bob", 23, "surgeon");
             DoctorList.Add(doctorBob);
             Doctor doctorSuzy = new Doctor("Suzy", 44, "podiatrist");
@@ -44,19 +42,17 @@ namespace UniversityHospital2
             DoctorList.Add(doctorLindsay);
             Doctor doctorMike = new Doctor("Mike", 12, "surgeon");
             DoctorList.Add(doctorMike);
-
-
         }
+
         public void ViewPremadeDoctors()
         {
         foreach (Doctor element in DoctorList)
             {
                 Console.WriteLine($"{element.EmployeeName}:     BloodLevel: {element.EmployeeNumber} HealthLevel: { element.Specialty} ");
             }
-
         }
 
-    public void HireJanitor()
+        public void HireJanitor()
         {
             Janitor janitor = new Janitor("Fred", 23, false);
             Console.WriteLine("What is the janitor's name?");
@@ -66,7 +62,6 @@ namespace UniversityHospital2
             Console.WriteLine("Is the janitor sweeping? ");
             Console.WriteLine("1: Yes\n 2: No");
             string sweepingMenu = Console.ReadLine();
-
             if (sweepingMenu == "1")
             {
                 janitor.SweepingOrNot = true;
@@ -75,7 +70,6 @@ namespace UniversityHospital2
             {
                 janitor.SweepingOrNot = false;
             }
-
             JanitorList.Add(janitor);
         }
 
@@ -120,7 +114,8 @@ namespace UniversityHospital2
             foreach (Doctor doctor in DoctorList)
             {
                 doctor.ViewEmployeeStatus();
-            }   
+            }
+            Console.WriteLine(" ");
         }
 
         public void PayDatabase()
@@ -168,6 +163,7 @@ namespace UniversityHospital2
             int nurseSelect = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($"You have selected {NurseList[nurseSelect - 1].EmployeeName} to care for patients.");
         }
+
         public void GetDoctorBloodDraw()
         {
             int i = 0;

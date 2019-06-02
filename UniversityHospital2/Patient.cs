@@ -6,6 +6,7 @@ namespace UniversityHospital2
 {
     public class Patient
     {
+        List<Patient> PatientList = new List<Patient>();
         public string PatientName { get; set; }
         public int BloodLevel { get; set; }
         public int HealthLevel { get; set; }
@@ -16,29 +17,33 @@ namespace UniversityHospital2
             BloodLevel = 20;
             HealthLevel = 10;
         }
+
         public void NurseCare()
         {
-            HealthLevel += 1;
+            foreach (Patient patient in PatientList)
+                patient.HealthLevel += 1;
         }
+
         public void DoctorCare()
         {
-            HealthLevel += 2;
+            foreach (Patient patient in PatientList)
+               patient.HealthLevel += 2;
         }
+
         public void NurseDraw()
         {
-            BloodLevel -= 1;
+            foreach (Patient patient in PatientList)
+                patient.BloodLevel -= 1;
         }
+
         public void DoctorDraw()
         {
-            BloodLevel -= 2;
+            foreach (Patient patient in PatientList)
+                patient.BloodLevel -= 2;
         }
-
-        List<Patient> PatientList = new List<Patient>();
-
 
         public  void AddPatients()
         {
-
             Patient patient = new Patient("Alex");
             PatientList.Add(patient);
             Patient patientSally = new Patient("Sally");
@@ -46,9 +51,7 @@ namespace UniversityHospital2
             Patient patientGreg = new Patient("Greg");
             PatientList.Add(patientGreg);
             Patient patientKyle = new Patient("Kyle");
-            PatientList.Add(patientKyle);
-            
-
+            PatientList.Add(patientKyle);          
         }
 
         public void ViewPatients()
@@ -57,8 +60,7 @@ namespace UniversityHospital2
             {
                 Console.WriteLine($"{element.PatientName}:     BloodLevel: {element.BloodLevel} HealthLevel: { element.HealthLevel} ");
             }
-        }
-
-        
+            Console.WriteLine(" ");
+        }       
     }
 }

@@ -8,7 +8,6 @@ namespace UniversityHospital2
         {
             MainMenu menu = new MainMenu();
             menu.GetMainMenu();
-
         }
     }
 }
