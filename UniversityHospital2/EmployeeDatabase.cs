@@ -4,7 +4,7 @@ using System.Text;
 
 namespace UniversityHospital2
 {
-    class EmployeeDatabase
+    public class EmployeeDatabase
     {
         public List<Receptionist> ReceptionistList = new List<Receptionist>();
         public List<Janitor> JanitorList = new List<Janitor>();
@@ -46,7 +46,7 @@ namespace UniversityHospital2
 
         public void ViewPremadeDoctors()
         {
-        foreach (Doctor element in DoctorList)
+            foreach (Doctor element in DoctorList)
             {
                 Console.WriteLine($"{element.EmployeeName}:     BloodLevel: {element.EmployeeNumber} HealthLevel: { element.Specialty} ");
             }
@@ -148,7 +148,14 @@ namespace UniversityHospital2
             }
             Console.WriteLine("Select a nurse by number.");
             int nurseSelect = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($"You have selected {NurseList[nurseSelect -1].EmployeeName} to draw blood.");
+            if (nurseSelect > 0 && nurseSelect <= i)
+            {
+                Console.WriteLine($"You have selected {NurseList[nurseSelect - 1].EmployeeName} to draw blood.");
+            }
+            else
+            {
+                Console.WriteLine("That nurse does not exist. Try entering a different number or hiring a nurse.");
+            }
         }
 
         public void GetNurseHealthCare()
@@ -161,7 +168,14 @@ namespace UniversityHospital2
             }
             Console.WriteLine("Select a nurse by number.");
             int nurseSelect = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($"You have selected {NurseList[nurseSelect - 1].EmployeeName} to care for patients.");
+            if (nurseSelect > 0 && nurseSelect <= i)
+            {
+                Console.WriteLine($"You have selected {NurseList[nurseSelect - 1].EmployeeName} to care for patients.");
+            }
+            else
+            {
+                Console.WriteLine("That nurse does not exist. Try entering a different number or hiring a nurse.");
+            }
         }
 
         public void GetDoctorBloodDraw()
@@ -174,7 +188,14 @@ namespace UniversityHospital2
             }
             Console.WriteLine("Select a doctor by number.");
             int doctorSelect = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($"You have selected {DoctorList[doctorSelect -1].EmployeeName} to draw blood.");
+            if (doctorSelect > 0 && doctorSelect <= i)
+            {
+                Console.WriteLine($"You have selected {DoctorList[doctorSelect - 1].EmployeeName} to draw blood.");
+            }
+            else
+            {
+                Console.WriteLine("That doctor does not exist. Try entering a different number or hiring a doctor.");
+            }
         }
 
         public void GetDoctorHealthCare()
@@ -187,7 +208,14 @@ namespace UniversityHospital2
             }
             Console.WriteLine("Select a doctor by number.");
             int doctorSelect = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($"You have selected {DoctorList[doctorSelect - 1].EmployeeName} to care for patients.");
+            if (doctorSelect > 0 && doctorSelect <= i)
+            {
+                Console.WriteLine($"You have selected {DoctorList[doctorSelect - 1].EmployeeName} to care for patients.");
+            }
+            else
+            {
+                Console.WriteLine("That doctor does not exist. Try entering a different number or hiring a doctor.");
+            }   
         }
     }
 }

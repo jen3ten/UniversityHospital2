@@ -4,7 +4,7 @@ using System.Text;
 
 namespace UniversityHospital2
 {
-    internal class Janitor : Employee
+    public class Janitor : Employee
     {
         public bool SweepingOrNot { get; set; }
 
