@@ -15,15 +15,15 @@ namespace UniversityHospital2
      
         public override void PaySalary()
         {
-                if (PaidOrNot == false)
-                {
-                    Console.WriteLine($"You have paid {EmployeeName} $45,000");
-                    PaidOrNot = true;
-                }
-                else
-                {
-                    Console.WriteLine($"{EmployeeName} has already been paid.");
-                }
+             if (PaidOrNot == false)
+             {
+                 Console.WriteLine($"You have paid {EmployeeName} $45,000");
+                 PaidOrNot = true;
+             }
+             else
+             {
+                 Console.WriteLine($"{EmployeeName} has already been paid.");
+             }
         }
         
         public override void ViewEmployeeStatus()
