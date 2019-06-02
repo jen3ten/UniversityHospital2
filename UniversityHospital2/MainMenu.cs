@@ -6,13 +6,6 @@ namespace UniversityHospital2
 {
     class MainMenu
     {
-        //EmployeeInfo
-        //Pay All Employees
-        //Patient Info
-        //Get Doc
-        //Get Nurse
-        //Hire(Add)
-
         public void GetMainMenu()
         {
             Patient hospitalPatients = new Patient("Patient");
@@ -25,16 +18,19 @@ namespace UniversityHospital2
                 Console.WriteLine("Press enter to continue:");
                 Console.ReadLine();
                 Console.Clear();
+                Console.WriteLine("Main Menu: \n");
                 Console.WriteLine("1: View Employee Database\n2: Hire Employee\n3: Pay all unpaid Employees\n4: Patient Database\n5: Select medical care\n6: Close program");
                 string mainMenu = Console.ReadLine();
                 switch (mainMenu)
                 {
                     case "1":
-                        universityHospitals.ViewDatabase();
-            
+                        Console.Clear();
+                        universityHospitals.ViewDatabase();          
                         break;
 
                     case "2":
+                        Console.Clear();
+                        Console.WriteLine("Hire Menu \n");
                         Console.WriteLine("1: Hire Receptionist\n2: Hire Janitor\n3: Hire Nurse\n4: Hire Doctor");
                         string hireMenu = Console.ReadLine();
                         switch (hireMenu)
@@ -55,15 +51,17 @@ namespace UniversityHospital2
                         break;
 
                     case "3":
+                        Console.Clear();
                         universityHospitals.PayDatabase();
                         break;
 
                     case "4":
-                        
+                        Console.Clear();
                         hospitalPatients.ViewPatients();
                         break;
 
                     case "5":
+                        Console.Clear();
                         Console.WriteLine("1: Blood draw from nurse\n2: Care from nurse\n3: Blood draw from doctor\n4: Care from doctor");
                         string medicalCare = Console.ReadLine();
                         switch (medicalCare)
@@ -84,7 +82,6 @@ namespace UniversityHospital2
                                 universityHospitals.GetDoctorHealthCare();
                                 hospitalPatients.DoctorCare();
                                 break;
-
                         }
                         break;
                     case "6":
@@ -94,9 +91,5 @@ namespace UniversityHospital2
             }
             while (running);
         }
-
-
-
-
     }
 }

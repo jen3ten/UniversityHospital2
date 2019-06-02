@@ -12,7 +12,6 @@ namespace UniversityHospital2
         {
             Specialty =specialty;            
         }
-
         
         public override void PaySalary()
         {          
@@ -24,13 +23,12 @@ namespace UniversityHospital2
                 else
                 {
                     Console.WriteLine($"{EmployeeName} has already been paid.");
-                }
-            
+                }   
         }
 
         public override void ViewEmployeeStatus()
         {
-            Console.WriteLine($"Name: {EmployeeName} | Number: {EmployeeNumber} | Salary: {EmployeeSalary} | Paid: {PaidOrNot} | Position: {EmployeeType}");
+            Console.WriteLine($"Name: {EmployeeName} | Number: {EmployeeNumber} | Salary: {EmployeeSalary} | Paid: {PaidOrNot} | Position: {EmployeeType} | Specialty: {Specialty}");
      
         }
     }
