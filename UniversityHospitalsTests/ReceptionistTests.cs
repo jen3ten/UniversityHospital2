@@ -15,5 +15,15 @@ namespace UniversityHospitalsTests
 
             Assert.Equal(expectedSalary, sut.EmployeeSalary);
         }
+
+        [Fact]
+        public void ReceptionistExpectedNameShouldMatchActual()
+        {
+            string expectedName = "Test";
+
+            Receptionist sut = new Receptionist(expectedName, 0, false);
+
+            Assert.Matches(expectedName, sut.EmployeeName);
+        }
     }
 }

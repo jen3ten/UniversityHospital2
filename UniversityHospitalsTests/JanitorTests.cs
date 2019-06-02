@@ -15,5 +15,15 @@ namespace UniversityHospitalsTests
 
             Assert.Equal(expectedSalary, sut.EmployeeSalary);
         }
+
+        [Fact]
+        public void JanitorExpectedNameShouldMatchActual()
+        {
+            string expectedName = "Test";
+
+            Janitor sut = new Janitor(expectedName, 0, false);
+
+            Assert.Matches(expectedName, sut.EmployeeName);
+        }
     }
 }
