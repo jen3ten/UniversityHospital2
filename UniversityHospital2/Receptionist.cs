@@ -4,7 +4,7 @@ using System.Text;
 
 namespace UniversityHospital2
 {
-    internal class Receptionist : Employee
+    public class Receptionist : Employee
     {
         public bool PhoneOrNot { get; set; }
 
