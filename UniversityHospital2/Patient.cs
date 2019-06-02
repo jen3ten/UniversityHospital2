@@ -33,28 +33,29 @@ namespace UniversityHospital2
             BloodLevel -= 2;
         }
 
-        public List<Patient> PatientList = new List<Patient>();
-        
+        List<Patient> PatientList = new List<Patient>();
 
-    public void AddPatients()
-    {
 
-        Patient patient = new Patient("Alex");
-        PatientList.Add(patient);
-        Patient patientSally = new Patient("Sally");
-        PatientList.Add(patientSally);
-        Patient patientGreg = new Patient("Greg");
-        PatientList.Add(patientGreg);
-        Patient patientKyle = new Patient("Kyle");
-        PatientList.Add(patientKyle);
-
-    }
-
-    public void ViewPatients()
+        public  void AddPatients()
         {
-            foreach (Patient patient in PatientList)
+
+            Patient patient = new Patient("Alex");
+            PatientList.Add(patient);
+            Patient patientSally = new Patient("Sally");
+            PatientList.Add(patientSally);
+            Patient patientGreg = new Patient("Greg");
+            PatientList.Add(patientGreg);
+            Patient patientKyle = new Patient("Kyle");
+            PatientList.Add(patientKyle);
+            
+
+        }
+
+        public void ViewPatients()
+        {
+            foreach (Patient element in PatientList)
             {
-                Console.WriteLine($"{PatientName}:     BloodLevel: {BloodLevel} HealthLevel: { HealthLevel} ");
+                Console.WriteLine($"{element.PatientName}:     BloodLevel: {element.BloodLevel} HealthLevel: { element.HealthLevel} ");
             }
         }
 

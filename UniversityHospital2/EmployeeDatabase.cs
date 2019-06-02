@@ -45,10 +45,18 @@ namespace UniversityHospital2
             Doctor doctorMike = new Doctor("Mike", 12, "surgeon");
             DoctorList.Add(doctorMike);
 
-       
+
+        }
+        public void ViewPremadeDoctors()
+        {
+        foreach (Doctor element in DoctorList)
+            {
+                Console.WriteLine($"{element.EmployeeName}:     BloodLevel: {element.EmployeeNumber} HealthLevel: { element.Specialty} ");
+            }
+
         }
 
-        public void HireJanitor()
+    public void HireJanitor()
         {
             Janitor janitor = new Janitor("Fred", 23, false);
             Console.WriteLine("What is the janitor's name?");
