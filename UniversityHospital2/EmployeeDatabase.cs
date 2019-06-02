@@ -4,7 +4,7 @@ using System.Text;
 
 namespace UniversityHospital2
 {
-    class EmployeeDatabase
+    public class EmployeeDatabase
     {
         public List<Receptionist> ReceptionistList = new List<Receptionist>();
         public List<Janitor> JanitorList = new List<Janitor>();
