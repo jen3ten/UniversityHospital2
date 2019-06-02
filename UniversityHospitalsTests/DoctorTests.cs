@@ -1,9 +1,9 @@
 using System;
 using Xunit;
 
-namespace EmployeeDatabase.Tests
+namespace UniversityHospitalsTests
 {
-    public class UnitTest1
+    public class DoctorTests
     {
         [Fact]
         public void Test1()
